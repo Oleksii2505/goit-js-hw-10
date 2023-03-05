@@ -13,7 +13,8 @@ let searchCountryName = '';
 
 input.addEventListener('input', debounce(onInputChange, DEBOUNCE_DELAY));
 
-function onInputChange() {
+function onInputChange(e) {
+  e.preventDefault();
   searchCountryName = input.value.trim();
   if (searchCountryName === '') {
     clearAll();
